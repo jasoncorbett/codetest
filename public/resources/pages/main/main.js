@@ -9,19 +9,10 @@ angular.module('simple')
       });
   }])
   .controller('MainCtrl', ['$scope', 'Restangular', function ($scope, rest) {
-        $scope.input = {
-            message: ""
-        };
+        $scope.courses = [];
 
-        $scope.output = {
-            message: ""
-        };
-
-        $scope.submit = function() {
-            rest.all('echo').post($scope.input).then(function(response) {
-                $scope.output = response;
-            });
-        };
-
+        rest.all('courses').getList().then(function(courses) {
+            $scope.courses = courses;
+        });
 
   }]);

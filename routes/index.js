@@ -32,7 +32,7 @@ glob.glob('public/resources/pages/**/*.css', function(er, files) {
 
 module.exports = {
     defaultPage: function(req, res) {
-        res.render('index', { title: 'Simple', libcss: libcss, css: css, libscripts: libscripts, scripts: scripts });
+        res.render('index', { title: 'Courses', libcss: libcss, css: css, libscripts: libscripts, scripts: scripts });
     }
-}
+};
 

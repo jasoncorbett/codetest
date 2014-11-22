@@ -1,19 +1,13 @@
 <div>
-    <md-card>
-        <md-toolbar>
-            <h2 class="md-toolbar-tools">Echo a Message</h2>
-        </md-toolbar>
-        <md-content class="indent">
-            <form>
-                <div layout="row" layout-align="start center">
-                    <md-text-float label="Message" ng-model="input.message"> </md-text-float>
-                    <md-button id="main-page-submit" class="md-raised md-primary" ng-click="submit()">Call Echo</md-button>
-                </div>
-            </form>
-        </md-content>
-        <md-content>
-            Output:
-            <p class="indent" ng-bind="output.message"></p>
-        </md-content>
-    </md-card>
+    <md-content layout="row" layout-phone="column">
+        <md-card ng-repeat="course in courses" flex>
+            <md-toolbar>
+                <h2 class="md-toolbar-tools" ng-bind="course.name"></h2>
+            </md-toolbar>
+            <md-content class="indent">
+                <h3>Description</h3>
+                <p ng-bind="course.description"></p>
+            </md-content>
+        </md-card>
+    </md-content>
 </div>
