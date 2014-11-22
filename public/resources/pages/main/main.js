@@ -8,11 +8,14 @@ angular.module('simple')
         controller: 'MainCtrl'
       });
   }])
-  .controller('MainCtrl', ['$scope', 'Restangular', function ($scope, rest) {
+  .controller('MainCtrl', ['$scope', 'Restangular', "$location", function ($scope, rest, $location) {
         $scope.courses = [];
 
         rest.all('courses').getList().then(function(courses) {
             $scope.courses = courses;
         });
 
+        $scope.goToCourse = function(course) {
+            $location.path('course/' + course.id);
+        };
   }]);

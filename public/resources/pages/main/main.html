@@ -1,7 +1,7 @@
 <div>
     <md-content layout="row" layout-phone="column">
         <md-card ng-repeat="course in courses" flex>
-            <md-toolbar>
+            <md-toolbar class="clickable" ng-click="goToCourse(course)">
                 <h2 class="md-toolbar-tools" ng-bind="course.name"></h2>
             </md-toolbar>
             <md-content class="indent">

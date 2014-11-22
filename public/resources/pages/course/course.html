@@ -1,0 +1,38 @@
+<div>
+        <md-card>
+            <md-content ng-show="course.id">
+                <md-toolbar>
+                    <h2 class="md-toolbar-tools" ng-bind="course.name"></h2>
+                </md-toolbar>
+                <md-content>
+                    <div ng-show="course.code" class="indent">
+                        <h3>Course Code</h3>
+                        <p ng-bind="course.code"></p>
+                    </div>
+                    <div ng-show="course.created_at" class="indent">
+                        <h3>Created</h3>
+                        <p ng-bind="course.created_at"></p>
+                    </div>
+                    <div ng-show="course.start_at" class="indent">
+                        <h3>Start</h3>
+                        <p ng-bind="course.start_at"></p>
+                    </div>
+                    <div ng-show="course.end_at" class="indent">
+                        <h3>End</h3>
+                        <p ng-bind="course.end_at"></p>
+                    </div>
+                    <div ng-show="course.updated_at" class="indent">
+                        <h3>Last Updated</h3>
+                        <p ng-bind="course.updated_at"></p>
+                    </div>
+                    <div ng-show="course.description" class="indent">
+                        <h3>Description</h3>
+                        <p ng-bind="course.description"></p>
+                    </div>
+                </md-content>
+            </md-content>
+            <md-content ng-hide="course.id">
+                <h3>Course not found</h3>
+            </md-content>
+        </md-card>
+</div>
