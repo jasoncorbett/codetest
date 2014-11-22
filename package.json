@@ -1,5 +1,5 @@
 {
-  "name": "simpleapp",
+  "name": "codetest",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,7 +14,8 @@
     "debug": "~2.0.0",
     "hjs": "~0.0.6",
     "main-bower-files": "~2.4.0",
-    "glob": "~4.2.1"
+    "glob": "~4.2.1",
+    "request": "~2.48.0"
   },
   "devDependencies": {
     "jasmine-node": "~1.14.5",

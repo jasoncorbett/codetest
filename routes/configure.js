@@ -1,11 +1,12 @@
 
 var index = require('./index');
-var echo = require('./api/echo');
+var courses = require('./api/courses');
 
 module.exports = {
     setup: function(app) {
         app.get('/', index.defaultPage);
-        app.post('/api/echo', echo.echoResponse);
+        app.get('/api/courses', courses.getCourses);
+        app.get('/api/courses/:id', courses.getCourse);
         app.get('*', index.defaultPage);
     }
 };
