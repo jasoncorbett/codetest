@@ -87,7 +87,6 @@ exports.config = {
   // --suite=smoke,full only the patterns matched by the specified suites will
   // run.
   suites: {
-    unit: 'tests/client/unit/*.js',
     ui: 'tests/client/ui/*.js'
   },
 
