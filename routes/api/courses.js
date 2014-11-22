@@ -29,7 +29,12 @@ var self = {
         self.ensureToken(function() {
             self.request.get({url: 'http://canvas-api.herokuapp.com/api/v1/courses', headers: {'Authorization': 'Token ' + self.token}, qs: req.query}, function(error, response, body) {
                 if(!error) {
-                    res.send(JSON.parse(body));
+                    try {
+                        res.send(JSON.parse(body));
+                    } catch(e) {
+                        res.send([]);
+                    }
+
                 } else {
                     console.log(error);
                     res.send([]);
@@ -41,7 +46,12 @@ var self = {
         self.ensureToken(function() {
             self.request.get({url: 'http://canvas-api.herokuapp.com/api/v1/courses/' + req.params.id, headers: {'Authorization': 'Token ' + self.token}}, function(error, response, body) {
                 if(!error) {
-                    res.send(JSON.parse(body));
+                    try {
+                        res.send(JSON.parse(body));
+                    } catch(e) {
+                        res.send({});
+                    }
+
                 } else {
                     console.log(error);
                     res.send({});

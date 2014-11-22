@@ -1,19 +1,18 @@
 
 var pages = require('../pages');
 
-describe("Simple App Main Page", function() {
+describe("Courses Main Page", function() {
     var main = new pages.MainPage();
 
-    it("should not have any message when initially loaded", function() {
+    it("should display 2 courses", function() {
         main.get();
-        expect(main.echoOutput.getText()).toEqual('');
+        expect(main.courses.count()).toEqual(2);
     });
 
-    it("should echo back whatever is submitted", function() {
+    it("should take you to a course page when the name is clicked", function() {
         main.get();
-        main.echoInput.click();
-        main.echoInput.sendKeys("Some Random String");
-        main.echoSubmit.click();
-        expect(main.echoOutput.getText()).toEqual('Some Random String');
+        main.course(1).click();
+        expect(browser.getLocationAbsUrl()).toContain("course");
     });
+
 });
